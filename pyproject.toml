@@ -1,0 +1,12 @@
+[project]
+name = "valhalla-overture"
+version = "0.1.0"
+description = "Out-of-tree Valhalla plugin that reads Overture Maps GeoParquet instead of OSM PBF to build routing tiles."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.5.1",
+    "requests>=2.32",
+    "pytest>=8.0",
+    "pytest-docker>=3.1",
+]

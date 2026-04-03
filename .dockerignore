@@ -1,0 +1,12 @@
+.git
+.venv
+data
+infra
+*.md
+*.py
+*.lock
+.python-version
+.kamal
+.gitignore
+.dockerignore
+Makefile

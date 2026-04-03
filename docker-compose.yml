@@ -1,0 +1,13 @@
+services:
+  valhalla:
+    image: ghcr.io/valhalla/valhalla:latest
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./data:/data
+    command: valhalla_service /data/valhalla.json
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8002/status"]
+      interval: 2s
+      timeout: 3s
+      retries: 15

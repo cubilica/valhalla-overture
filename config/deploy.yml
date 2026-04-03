@@ -1,0 +1,24 @@
+service: valhalla-overture
+image: cubilica/valhalla-overture
+
+servers:
+  web:
+    - valhalla-overture-web-1
+
+proxy:
+  ssl: true
+  app_port: 8002
+  host: <%= ENV['APP_HOST'] %>
+  healthcheck:
+    path: /status
+
+registry:
+  server: ghcr.io
+  username:
+    - KAMAL_REGISTRY_USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: arm64
+  dockerfile: Dockerfile.service

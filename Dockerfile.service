@@ -1,0 +1,10 @@
+FROM ghcr.io/valhalla/valhalla:latest
+
+COPY data/valhalla.json /data/valhalla.json
+COPY data/valhalla_tiles/ /data/valhalla_tiles/
+
+EXPOSE 8002
+HEALTHCHECK --interval=10s --timeout=3s --retries=3 \
+  CMD curl -sf http://localhost:8002/status || exit 1
+
+CMD ["valhalla_service", "/data/valhalla.json"]

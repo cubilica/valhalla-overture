@@ -1,0 +1,25 @@
+# Environment & Secrets
+.env
+.kamal/secrets
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Build
+build/
+
+# Data (large parquet files)
+data/connectors.parquet
+data/segments.parquet
+data/valhalla_tiles/
+
+# Terraform
+infra/.terraform/
+infra/terraform.tfstate*
+infra/.terraform.lock.hcl
+infra/terraform.tfvars
+
+# IDE
+.vscode/
